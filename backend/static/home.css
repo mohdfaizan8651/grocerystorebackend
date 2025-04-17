@@ -1,0 +1,33 @@
+#in_se{
+    width: 500px;
+    
+    padding: 2px;
+}
+#title{
+ margin: 4px;
+}
+#cat{
+    background-color: #fbfbfb;
+    margin: 5px;
+    border-radius: 5px;
+    
+}
+/* #prod{
+    margin: 3px;
+    width: 50px;
+} */
+
+.input{
+  width: 100%;
+  border-radius: 5px;
+  height: 47px;
+  padding: 7px;
+}
+.card{
+    margin: 5px;
+}
+
+
+
+
+

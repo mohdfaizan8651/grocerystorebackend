@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.2/vue-router.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@2.0.1/dist/index.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-js-modal@2.0.1/dist/styles.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+
+
+
+  <title>Grocery Home </title>
+</head>
+
+<body>
+
+  <div id="S_C_P_A2_E12_D12" class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- <h4  id="username">Username</h4> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <Login></Login>
+            </li>
+            <li class="nav-item">
+              <p id="Logout" @click="Logout()">Logout</p>
+            </li>
+            <li class="nav-item">
+              <singin></singin>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="/card">Card{(N_prod)}</a>
+              <p>{(cartProd)}</p>
+              <!-- <router-link :to="/card">card</router-link> -->
+            </li> 
+
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" v-model="search_cat" type="search" placeholder="Search"
+              aria-label="Search">
+            <button class="btn btn-outline-success" @click="search()" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="card-details" style="display: flex;
+    align-items: center;
+    justify-content: space-between;">
+      <a href="/card" style="text-decoration: None;color:black" ><strong >Cart items </strong> {(Products.length)}</a>
+      <strong> total {(total)}</strong>
+    </div>
+    <div class="row" style="padding: 10px;">
+      <div v-for="cat in search_category">
+        <h4 style="text-align: center;">{(cat.Categoryname)}</h4>
+        <div style="display: flex;
+        padding: inherit;">
+          <div class="card" v-for="prod in get_product" v-if="cat.Category_id==prod.Category_id"
+            style="width: 16rem;padding: 5px;">
+            <img :src="`${(prod.image)}`" class="card-img-top" alt="...">
+
+            <div class="card-body">
+              <p class="card-title">{(prod.Productname)}</p>
+              <p class="card-title">Rs:{(prod.price)}</p>
+              <p class="card-title">Exp {(prod.ProductExp)}</p>
+
+
+              <button :id="`${(prod.Product_id)}`"  @click="addItem(prod)" class="btn btn-success">Add Card</button
+                >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script type="text/javascript" src="/static/ma_Home.js"></script>
+  <!-- <script type="text/javascript" src="/static/user_home.js"></script> -->
+</body>
+
+</html>
