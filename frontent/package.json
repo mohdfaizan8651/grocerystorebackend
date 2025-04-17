@@ -1,0 +1,26 @@
+{
+  "name": "grocery-store",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cloudinary/url-gen": "^1.20.0",
+    "@cloudinary/vue": "^1.12.1",
+    "axios": "^1.7.2",
+    "jwt-decode": "^4.0.0",
+    "vue": "^3.4.29",
+    "vue-cookie": "^1.1.4",
+    "vue-cookies": "^1.8.4",
+    "vue-router": "^4.3.3",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.4.11"
+  }
+}
